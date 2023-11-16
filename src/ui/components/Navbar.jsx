@@ -4,7 +4,7 @@ import logocedes from "../../assets/logocedes1.png";
 
 export const Navbar = ({ buttonAction }) => {
   return (
-    <nav className="bg-gradient-to-b from-violet-800 to-violet-400">
+    <nav className="">
       <div className="container mx-auto px-2 bg-gradient-to-b">
         <div className="flex items-center justify-between py-4 bg-gradient-to-b">
           <Link

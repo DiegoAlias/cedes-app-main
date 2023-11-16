@@ -2,6 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-    background: #d4d4d4;
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.homePage {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.video-background {
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    z-index: -1;
+}
+
+video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.bg-donatePage {
+    background: rgba(20, 20, 20, 0.541);
+    backdrop-filter: blur(2px);
+}
+
+/* Estilo para el navbar */
+nav {
+    background-color: #2424241f;
+    color: #fff;
+}
+
+nav::after {
+    content: "";
+    display: block;
+    border-bottom: 3px solid #fff;
+    width: 75%;
+    margin: 1 auto;
+}
+
+
+@media screen and (max-width: 767px) {
+    .text-DonatePage {
+        display: none;
+    }
+}
+
+
+/* ButtonDonateTransfer */
+.url-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.url-container.visible {
+    max-height: 40px;
+    /* ajusta según tus necesidades */
 }
