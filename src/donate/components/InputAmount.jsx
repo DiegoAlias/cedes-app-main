@@ -1,7 +1,7 @@
 import { useForm, Controller } from "react-hook-form";
 import CurrencyInput from "react-currency-input-field";
 
-export const InputAmount = ({ control }) => {
+export const InputAmount = ({ control, onChange }) => {
   const { setError } = useForm();
 
   return (
@@ -17,6 +17,7 @@ export const InputAmount = ({ control }) => {
           <>
             <CurrencyInput
               // {...field}
+              id="transaction_amount"
               placeholder="$00.0"
               allowNegativeValue={false}
               decimalSeparator=","
@@ -25,13 +26,14 @@ export const InputAmount = ({ control }) => {
               className={`bg-white p-6 border border-violet-800 rounded-full w-80 text-gray-700 text-center text-2xl mt-12 ${
                 fieldState.invalid ? "border-red-500" : ""
               }`}
-              onValueChange={(value, name) => {
-                if (isNaN(value)) {
-                  // Realiza acciones adicionales aquí si es necesario
-                  const isInvalid = !/^\d*$/g.test(value);
+              onValueChange={(value, name) => {                
+                const numericValue = value && parseFloat(value.replace(/[^0-9.-]+/g, "")); 
+                field.onChange(numericValue);               
+                onChange && onChange(numericValue);
+                if (isNaN(numericValue)) {
                   setError(name, {
-                    type: isInvalid ? "manual" : "manual",
-                    message: isInvalid ? "Solo se permiten números" : "",
+                    type: "manual",
+                    message: "Solo se permiten números",
                   });
                 }
               }}
