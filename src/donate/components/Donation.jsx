@@ -10,6 +10,9 @@ export const Donation = ({ donations }) => {
           {donations.payer_email}
         </div>
         <div className="table-cell px-4 py-2 border-b-4 border-gray-400">
+          {donations.dni}
+        </div>
+        <div className="table-cell px-4 py-2 border-b-4 border-gray-400">
           {donations.celnumber}
         </div>
         <div className="table-cell px-4 py-2 border-b-4 border-gray-400 text-center">

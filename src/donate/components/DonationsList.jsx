@@ -44,6 +44,9 @@ export const DonationsList = ({ token }) => {
                 Email
               </div>
               <div className="table-cell font-bold px-4 py-2 bg-blue-600">
+                DNI
+              </div>
+              <div className="table-cell font-bold px-4 py-2 bg-blue-600">
                 Teléfono
               </div>
               <div className="table-cell font-bold px-4 py-2 bg-blue-600">

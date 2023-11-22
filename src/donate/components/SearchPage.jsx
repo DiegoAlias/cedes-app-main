@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 
 export const SearchPage = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = () => {
     onSearch(searchTerm);
@@ -22,7 +22,7 @@ export const SearchPage = ({ onSearch }) => {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         onKeyPress={handleKeyPress} // Agrega el manejador de eventos para Enter
-        className="p-2 border border-gray-300 rounded focus:outline-none"
+        className="p-2 border-2 border-gray-600 rounded focus:outline-none"
       />
       <button
         onClick={handleSearch}
