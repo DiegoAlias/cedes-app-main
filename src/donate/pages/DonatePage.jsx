@@ -14,7 +14,8 @@ export const DonatePage = () => {
   const [formTouched, setFormTouched] = useState(false);
 
   const onSubmit = handleSubmit(async (data) => {
-    const { payer_email, dni, transaction_amount, first_name, celnumber } = data;
+    const { payer_email, dni, transaction_amount, first_name, celnumber } =
+      data;
 
     const response = await fetch("http://localhost:3000/create-subscripcion", {
       method: "POST",
@@ -53,7 +54,10 @@ export const DonatePage = () => {
               <InputPhone control={control} />
             </div>
             <div className="w-full mt-4 lg:w-1/2">
-              <InputAmount control={control} onChange={(value) => console.log(value)} />
+              <InputAmount
+                control={control}
+                onChange={(value) => console.log(value)}
+              />
               <ButtonDonatePage />
               {/* <ButtonDonateTranfer /> */}
               {formTouched && formState.isValid && <ButtonDonateTranfer />}
@@ -61,8 +65,8 @@ export const DonatePage = () => {
           </div>
         </form>
         <h2 className="text-center p-8 mx-32 text-3xl text-white font-bold leading-loose text-DonatePage">
-          Ayúdanos a cambiar vidas a través de tu generosa donación. Juntos
-          podemos hacer una diferencia
+          Ayúdanos a cambiar vidas a través de tu donación.{" "}
+          <p>Juntos podemos hacer una diferencia</p>
         </h2>
       </div>
     </>
