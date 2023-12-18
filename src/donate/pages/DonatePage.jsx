@@ -64,10 +64,12 @@ export const DonatePage = () => {
             </div>
           </div>
         </form>
-        <h2 className="text-center p-8 mx-32 text-3xl text-white font-bold leading-loose text-DonatePage">
+        <h2 className="text-center p-1 mt-2 rounded-xl mx-34 px-3 text-white font-bold leading-loose text-DonatePage">
           Ayúdanos a cambiar vidas a través de tu donación.{" "}
-          <p>Juntos podemos hacer una diferencia</p>
         </h2>
+        <p className="text-center p-1 mt-2 rounded-xl mx-34 px-3 text-white font-bold leading-loose text-DonatePage">
+          Juntos podemos hacer una diferencia.
+        </p>
       </div>
     </>
   );

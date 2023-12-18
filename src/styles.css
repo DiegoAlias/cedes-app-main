@@ -5,7 +5,10 @@
 body {
     margin: 0;
     padding: 0;
-    /* background: red; */
+    background-image: url(./assets/manos.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
 }
 
 .homePage {
@@ -16,7 +19,7 @@ body {
     overflow-y: scroll;
 }
 
-.video-background {
+/* .video-background {
     width: 100%;
     min-height: 100vh;
     position: absolute;
@@ -27,11 +30,11 @@ video {
     width: 100%;
     height: 100vh;
     object-fit: cover;
-}
+} */
 
 .bg-donatePage {
-    background: rgba(20, 20, 20, 0.541);
-    backdrop-filter: blur(2px);
+    background: rgba(20, 20, 20, 0.644);
+    backdrop-filter: blur(8px);
 }
 
 /* Estilo para el navbar */
@@ -48,6 +51,11 @@ nav::after {
     margin: 1 auto;
 }
 
+.text-DonatePage {
+    background: rgba(126, 7, 223, 0.849);
+    backdrop-filter: blur(2px);
+    font-size: 1.6rem;
+}
 
 @media screen and (max-width: 767px) {
     .text-DonatePage {
