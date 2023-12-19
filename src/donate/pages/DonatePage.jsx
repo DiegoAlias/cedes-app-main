@@ -17,7 +17,7 @@ export const DonatePage = () => {
     const { payer_email, dni, transaction_amount, first_name, celnumber } =
       data;
 
-    const response = await fetch("http://localhost:3000/create-subscripcion", {
+    const response = await fetch("https://donations-mercadopago-nicoriver9.vercel.app/create-subscripcion", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
