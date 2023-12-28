@@ -1,35 +1,34 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { Navbar } from "../../ui";
-import { useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { fetchToken } from "../helpers/fetchToken";
 
-export const LoginPages = () => {  
-  
+export const LoginPages = () => {
   const navigate = useNavigate();
 
   const {
     register,
     handleSubmit,
-    formState: { errors },    
+    formState: { errors },
   } = useForm();
-  
-  const onSubmit = handleSubmit(async(data) => {          
-    const userToken = await fetchToken(data);  
-     navigateToDatabase(userToken);       
+
+  const onSubmit = handleSubmit(async (data) => {
+    const userToken = await fetchToken(data);
+    navigateToDatabase(userToken);
   });
-    
+
   const navigateToDatabase = (token) => {
     navigate("/database", {
       replace: true,
-      state: {token}, // Pasa el token como parte del estado de la ruta
-    });  
+      state: { token }, // Pasa el token como parte del estado de la ruta
+    });
   };
-  
+
   return (
     <div>
       <Navbar buttonAction="none" />
 
-      <div className="max-w-md mx-auto mt-20 p-6 bg-white rounded-2xl shadow-md">
+      <div className="max-w-sm mx-auto mt-20 p-6 bg-white rounded-2xl shadow-md">
         <h2 className="text-2xl font-semibold mb-5 bg-white">Iniciar sesión</h2>
 
         <form className="bg-white" onSubmit={onSubmit}>
@@ -44,7 +43,7 @@ export const LoginPages = () => {
             <input
               type="text"
               id="username"
-              name="username"              
+              name="username"
               className="w-full px-3 py-2 border border-gray-400 rounded-md focus:outline-none focus:border-blue-500 bg-white"
               autoFocus
               {...register("username", {
@@ -82,7 +81,7 @@ export const LoginPages = () => {
             <input
               type="password"
               id="password"
-              name="password"              
+              name="password"
               className="w-full px-3 py-2 border border-gray-400 rounded-md focus:outline-none focus:border-blue-500 bg-white"
               {...register("password", {
                 required: {

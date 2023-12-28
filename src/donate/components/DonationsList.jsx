@@ -28,7 +28,7 @@ export const DonationsList = ({ token }) => {
   };
 
   return (
-    <div className="w-full mt-4 p-4">
+    <div className="container w-full mt-4 p-4">
       <div className="max-w-screen-md mx-auto">
         <SearchPage onSearch={handleSearch} />
         <div className="table-container mt-4">

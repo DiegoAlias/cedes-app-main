@@ -44,32 +44,46 @@ export const DonatePage = () => {
   return (
     <>
       <Navbar buttonAction="login" />
-      <div className="flex flex-col items-center mt-10">
-        <form onSubmit={handleSubmit(onSubmit)} onChange={handleFormChange}>
-          <div className="flex flex-col lg:flex-row items-start justify-between p-4 mb-6 border-2 border-gray-500 rounded-2xl bg-donatePage space-y-4 lg:space-y-0">
-            <div className="w-full lg:w-1/2 space-y-4 lg:space-y-0 lg:mr-24">
-              <InputName control={control} />
-              <InputMail control={control} />
-              <InputDni control={control} />
-              <InputPhone control={control} />
-            </div>
-            <div className="w-full mt-4 lg:w-1/2">
-              <InputAmount
-                control={control}
-                onChange={(value) => console.log(value)}
-              />
-              <ButtonDonatePage />
-              {/* <ButtonDonateTranfer /> */}
+      <div className="flex flex-row items-center justify-center mt-4">
+        <div className="flex lg:flex-row p-4 mb-6 border-2 border-gray-500 rounded-2xl bg-donatePage space-y-4 lg:space-y-0 lg:mr-10">
+          <div>
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              onChange={handleFormChange}
+              className=""
+            >
+              <div>
+                <InputName control={control} />
+                <InputMail control={control} />
+                <InputDni control={control} />
+                <InputPhone control={control} />
+              </div>
+              <div>
+                <InputAmount
+                  control={control}
+                  onChange={(value) => console.log(value)}
+                />
+                <div className="my-4">
+                  <ButtonDonatePage />
+                </div>
+              </div>
+            </form>
+            <div>
               {formTouched && formState.isValid && <ButtonDonateTranfer />}
             </div>
           </div>
-        </form>
-        <h2 className="text-center p-1 mt-2 rounded-xl mx-34 px-3 text-white font-bold leading-loose text-DonatePage">
-          Ayúdanos a cambiar vidas a través de tu donación.{" "}
-        </h2>
-        <p className="text-center p-1 mt-2 rounded-xl mx-34 px-3 text-white font-bold leading-loose text-DonatePage">
-          Juntos podemos hacer una diferencia.
-        </p>
+        </div>
+        <div className="flex flex-col items-center lg:ml-10">
+          <h2 className="text-center p-1 mt-4 rounded-xl mx-34 px-3 text-white font-bold leading-loose">
+            Ayúdanos a cambiar vidas.
+          </h2>
+          <p className="text-center p-1 mt-5 rounded-xl mx-34 px-3 text-white font-bold leading-loose text-DonatePage">
+            A través de tu donación
+          </p>
+          <p className="text-center p-1 rounded-xl mx-34 px-3 text-white font-bold leading-loose text-DonatePage">
+            podemos hacer una diferencia.
+          </p>
+        </div>
       </div>
     </>
   );

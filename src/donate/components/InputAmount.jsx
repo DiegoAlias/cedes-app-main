@@ -11,7 +11,7 @@ export const InputAmount = ({ control, onChange }) => {
         control={control}
         defaultValue=""
         rules={{
-          required: "Ingrese una donación",
+          required: "Ingrese un monto",
         }}
         render={({ field, fieldState }) => (
           <>
@@ -23,12 +23,13 @@ export const InputAmount = ({ control, onChange }) => {
               decimalSeparator=","
               groupSeparator="."
               prefix="$"
-              className={`bg-white p-6 border border-violet-800 rounded-full w-80 text-gray-700 text-center text-2xl mt-12 ${
+              className={`bg-white p-4 border rounded-full w-80 text-gray-700 text-center text-2xl mt-8 ${
                 fieldState.invalid ? "border-red-500" : ""
               }`}
-              onValueChange={(value, name) => {                
-                const numericValue = value && parseFloat(value.replace(/[^0-9.-]+/g, "")); 
-                field.onChange(numericValue);               
+              onValueChange={(value, name) => {
+                const numericValue =
+                  value && parseFloat(value.replace(/[^0-9.-]+/g, ""));
+                field.onChange(numericValue);
                 onChange && onChange(numericValue);
                 if (isNaN(numericValue)) {
                   setError(name, {
@@ -40,7 +41,7 @@ export const InputAmount = ({ control, onChange }) => {
             />
 
             {fieldState.invalid && (
-              <p className="text-red-500 font-semibold text-center">
+              <p className="text-red-100 text-center bg-red-800 mx-16 my-3 rounded-md">
                 {fieldState.error.message}
               </p>
             )}

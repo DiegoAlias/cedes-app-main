@@ -20,7 +20,7 @@ export const InputPhone = ({ control }) => {
               inputMode="numeric"
               placeholder="Número de teléfono"
               id="celnumber"
-              className={`bg-white p-2 border border-violet-800 rounded-full w-80 text-gray-700 text-center my-4 text-xl ${
+              className={`bg-white p-1.5 border rounded-xl w-80 font-medium text-center mt-3 text-base ${
                 fieldState.invalid ? "border-red-500" : ""
               }`}
               onInput={(e) => {
@@ -35,7 +35,7 @@ export const InputPhone = ({ control }) => {
               }}
             />
             {fieldState.invalid && (
-              <p className="text-red-500 font-semibold text-center">
+              <p className="text-red-100 text-center bg-red-800 mx-4 my-3 rounded-md">
                 {fieldState.error.message}
               </p>
             )}

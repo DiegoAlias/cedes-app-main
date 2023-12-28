@@ -51,13 +51,19 @@ nav::after {
     margin: 1 auto;
 }
 
-.text-DonatePage {
-    background: rgba(126, 7, 223, 0.849);
+h2 {
+    background: rgba(126, 7, 223, 0.900);
     backdrop-filter: blur(2px);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 }
 
-@media screen and (max-width: 767px) {
+.text-DonatePage {
+    background: rgba(126, 7, 223, 0.900);
+    backdrop-filter: blur(2px);
+    font-size: 1.4rem;
+}
+
+@media screen and (max-width: 1024px) {
     .text-DonatePage {
         display: none;
     }
@@ -73,5 +79,4 @@ nav::after {
 
 .url-container.visible {
     max-height: 40px;
-    /* ajusta según tus necesidades */
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { FaHandPointer, FaCopy, FaCheck } from "react-icons/fa";
+import { FaHandPointer, FaCopy } from "react-icons/fa";
+import { PiChecksBold } from "react-icons/pi";
 
 export const ButtonDonateTranfer = () => {
   const [isCopied, setIsCopied] = useState(false);
@@ -37,24 +38,26 @@ export const ButtonDonateTranfer = () => {
       <button
         type="submit"
         onClick={handleButtonClick}
-        className="bg-blue-700 text-white p-2 rounded-full  hover:bg-blue-900 hover:text-white font-bold text-lg flex items-center justify-center mx-auto px-4"
+        className="bg-blue-700 text-white p-2 rounded-full  hover:bg-blue-900 hover:text-white font-bold flex items-center justify-center mx-auto px-4"
       >
-        <FaHandPointer className="w-5 h-5 mx-2" />
+        <FaHandPointer className="w-4 h-4 mx-2" />
         <span className="ml-1">Transferencia CBU</span>
       </button>
       <div
         className={`url-container ${
           isUrlVisible ? "visible" : ""
-        } bg-white px-0.5 mt-4 rounded-lg text-center items-center justify-center`}
+        } bg-blue-700 text-white mt-2 rounded-lg flex items-center justify-center mx-6`}
       >
-        <span id="url">1234567891234567891234</span>
-        <button id="buttonCopy" onClick={handleCopyClick}>
-          {isCopied ? (
-            <FaCheck className="mx-4 w-4 h-4" />
-          ) : (
-            <FaCopy className="mx-4 w-4 h-4" />
-          )}
-        </button>
+        <span id="url">
+          1234567891234567891234
+          <button
+            id="buttonCopy"
+            onClick={handleCopyClick}
+            className="mx-2 w-4 h-4"
+          >
+            {isCopied ? <PiChecksBold /> : <FaCopy />}
+          </button>
+        </span>
       </div>
     </div>
   );

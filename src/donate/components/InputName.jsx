@@ -19,7 +19,7 @@ export const InputName = ({ control }) => {
               type="text"
               placeholder="Nombre y apellido o Razón social"
               id="first_name"
-              className={`bg-white p-2 border border-violet-800 rounded-full w-80 text-gray-700 text-center my-4 text-lg ${
+              className={`bg-white p-1.5 border rounded-xl w-80 mt-2 font-medium text-center text-base ${
                 fieldState.invalid ? "border-red-500" : ""
               }`}
               autoFocus
@@ -35,7 +35,7 @@ export const InputName = ({ control }) => {
               }}
             />
             {fieldState.invalid && (
-              <p className="text-red-500 font-semibold text-center">
+              <p className="text-red-100 text-center bg-red-800 mx-10 my-2 rounded-md">
                 {fieldState.error.message}
               </p>
             )}

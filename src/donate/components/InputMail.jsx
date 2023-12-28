@@ -19,7 +19,7 @@ export const InputMail = ({ control }) => {
               type="email"
               placeholder="Correo electrónico"
               id="email"
-              className={`bg-white p-2 border border-violet-800 rounded-full w-80 text-gray-700 text-center my-2 text-lg ${
+              className={`bg-white p-1.5 border rounded-xl w-80 font-medium text-center mt-4 text-base ${
                 fieldState.invalid ? "border-red-500" : ""
               }`}
               onInput={(e) => {
@@ -37,7 +37,7 @@ export const InputMail = ({ control }) => {
               }}
             />
             {fieldState.invalid && (
-              <p className="text-red-500 font-semibold text-center">
+              <p className="text-red-100 text-center bg-red-800 mx-6 my-3 rounded-md">
                 {fieldState.error.message}
               </p>
             )}
