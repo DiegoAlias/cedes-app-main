@@ -12,27 +12,39 @@ import { useState } from "react";
 export const DonatePage = () => {
   const { control, handleSubmit, formState } = useForm();
   const [formTouched, setFormTouched] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = handleSubmit(async (data) => {
-    const { payer_email, dni, transaction_amount, first_name, celnumber } =
-      data;
+    setIsLoading(true);
 
-    const response = await fetch("http://localhost:3000/create-subscripcion", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        first_name: first_name,
-        dni: dni,
-        celnumber: celnumber,
-        payer_email: payer_email,
-        transaction_amount: transaction_amount,
-        subscripcion_months: 12,
-      }),
-    });
-    const dataResponse = await response.json();
-    if (dataResponse) window.location.href = dataResponse.init_point;
+    try {
+      const { payer_email, dni, transaction_amount, first_name, celnumber } =
+        data;
+
+      const response = await fetch(
+        "https://cedes-donations-nicoriver9.vercel.app/create-subscripcion",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            first_name: first_name,
+            dni: dni,
+            celnumber: celnumber,
+            payer_email: payer_email,
+            transaction_amount: transaction_amount,
+            subscripcion_months: 12,
+          }),
+        }
+      );
+      const dataResponse = await response.json();
+      if (dataResponse) window.location.href = dataResponse.init_point;
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
   });
 
   const handleFormChange = () => {
