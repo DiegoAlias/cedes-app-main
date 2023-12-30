@@ -52,13 +52,11 @@ nav::after {
 }
 
 h2 {
-    background: rgba(126, 7, 223, 0.900);
-    backdrop-filter: blur(2px);
     font-size: 1.8rem;
 }
 
 .text-DonatePage {
-    background: rgba(126, 7, 223, 0.900);
+    background: rgba(126, 7, 223, 0.750);
     backdrop-filter: blur(2px);
     font-size: 1.4rem;
 }

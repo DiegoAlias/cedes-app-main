@@ -85,16 +85,10 @@ export const DonatePage = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center lg:ml-10">
-          <h2 className="text-center p-1 mt-4 rounded-xl mx-34 px-3 text-white font-bold leading-loose">
-            Ayúdanos a cambiar vidas.
-          </h2>
-          <p className="text-center p-1 mt-5 rounded-xl mx-34 px-3 text-white font-bold leading-loose text-DonatePage">
-            A través de tu donación
-          </p>
-          <p className="text-center p-1 rounded-xl mx-34 px-3 text-white font-bold leading-loose text-DonatePage">
-            podemos hacer una diferencia.
-          </p>
+        <div className="text-center p-4 px-6 flex flex-col items-center lg:ml-10 text-DonatePage rounded-xl mx-34 text-white font-bold leading-loose">
+          <h2 className="my-2">Ayúdanos a cambiar vidas.</h2>
+          <p className="">A través de tu donación</p>
+          <p className="mb-4">podemos hacer una diferencia.</p>
         </div>
       </div>
     </>
